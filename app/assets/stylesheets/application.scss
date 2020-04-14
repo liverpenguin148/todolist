@@ -8,4 +8,12 @@
 .container {
   margin-top: 40px;
   margin-left: 10px;
+  margin-bottom: 60px;
+}
+
+.footer {
+  .container{
+    margin-top: 10px;
+  }
+  border-top: 1px solid rgba(191,182,182,0.1);
 }
