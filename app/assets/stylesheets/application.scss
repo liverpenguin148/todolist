@@ -1,0 +1,52 @@
+@import "bootstrap";
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 80%;
+}
+
+.navbar-light .navbar-toggler 
+{
+  border :none;
+}
+
+.container {
+  margin-left: 10px;
+  margin-bottom: 20px;
+  padding: 20px;
+  h1 {
+    margin-bottom: 50px;
+  }
+  p {
+    font-style: italic;
+  }
+  .login {
+    margin-top: 30px;
+  }
+  .createuser {
+    margin-top: 20px;
+  }
+}
+
+/* フッター */
+.footer {
+  border-top: 10px #666;
+  width : 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: #777;
+  a {
+    color: #fff;
+  }
+  ul {
+    float: right;
+    list-style: none;
+  }
+  p {
+    margin-left: 10px;
+    color: #fff;
+  }
+}
