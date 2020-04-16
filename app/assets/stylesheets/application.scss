@@ -1,5 +1,11 @@
 @import "bootstrap";
 
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
 html {
   height: 100%;
 }
@@ -49,4 +55,11 @@ body {
     margin-left: 10px;
     color: #fff;
   }
+}
+
+.debug_dump {
+  clear: both;
+  float: left;
+  margin-top: 45px;
+  @include box_sizing
 }

@@ -8,6 +8,7 @@ gem 'rails', '~> 5.2.4', '>= 5.2.4.2'
 gem 'bcrypt', '3.1.13'
 # Bootstrapとjqueryの追加
 gem 'bootstrap', '~> 4.3.1'
+gem 'bootstrap-sass'
 gem 'jquery-rails'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
