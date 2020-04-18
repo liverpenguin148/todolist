@@ -1,0 +1,91 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  padding-top: 60px;
+  height: 80%;
+}
+
+textarea {
+  resize: vertical;
+}
+
+
+.container {
+  float: left;
+  margin-bottom: 20px;
+  padding: 20px;
+  h1 {
+    margin-bottom: 50px;
+  }
+  p {
+    font-style: italic;
+  }
+  .login {
+    margin-top: 30px;
+  }
+  .createuser {
+    margin-top: 20px;
+  }
+}
+
+/* フッター */
+.footer {
+  border-top: 10px #666;
+  width : 95%;
+  position: absolute;
+  bottom: 0;
+  background-color: #777;
+  a {
+    color: #fff;
+  }
+  ul {
+    float: right;
+    list-style: none;
+  }
+  p {
+    margin-left: 10px;
+    color: #fff;
+  }
+}
+
+.debug_dump {
+  clear: both;
+  float: left;
+  margin-top: 45px;
+  @include box_sizing
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+
+/* エラーメッセージ */
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: state-danger-text;
+  }
+}
