@@ -7,11 +7,7 @@ module SessionsHelper
   # 現在のユーザー情報を取得
   def current_user
     if session[:user_id]
-      if @current_user.nil?
-        @current_user = User.find_by(id: session[:user_id])
-      else
-        @current_user
-      end
+        @current_user ||= User.find_by(id: session[:user_id])
     end
   end
   
