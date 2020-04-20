@@ -1,0 +1,15 @@
+<% provide(:title, "ログインページ") %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-1">
+    <%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+      <%= f.label :email, "メールアドレス" %>
+      <%= f.email_field :email, class: 'form-control' %>
+  
+      <%= f.label :password, "パスワード" %>
+      <%= f.password_field :password, class: 'form-control' %>
+  
+      <%= f.submit "ログイン", class: "btn btn-primary" %>
+    <% end %>
+    <p><%= link_to "会員登録がまだの方はこちら", signup_path %></p>
+  </div>
+</div>
