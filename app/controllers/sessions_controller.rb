@@ -7,6 +7,8 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       # log_inメソッドで一時セッションを作成
       log_in user
+      # rememberメソッドでハッシュ化した記憶トークンをDBに保存
+      remember user
       #ユーザーログイン後にユーザー情報へリダイレクト
       redirect_to user
     else
