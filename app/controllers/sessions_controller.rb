@@ -10,7 +10,6 @@ class SessionsController < ApplicationController
       # チェックボックスの送信結果を処理
       # remember(user)：ハッシュ化した記憶トークンをDBに保存
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-      remember user
       #ユーザーログイン後にユーザー情報へリダイレクト
       redirect_to user
     else
