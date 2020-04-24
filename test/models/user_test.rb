@@ -68,4 +68,9 @@ class UserTest < ActiveSupport::TestCase
     @user.password = @user.password_confirmation = "a" * 5
     assert_not @user.valid?
   end
+  
+  # authenticate?メソッドの引数である、remember_digestがDBに存在しない場合
+  test "authenticate? should return false when remember_digest is nil" do
+    assert_not @user.authenticate?('')
+  end
 end

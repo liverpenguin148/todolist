@@ -17,6 +17,7 @@ module SessionsHelper
   def forget(user)
     # DBにある記憶ダイジェストを破棄
     user.forget
+    # cookies情報の破棄
     cookies.delete(:user_id)
     cookies.delete(:remember_token)
   end
@@ -27,6 +28,7 @@ module SessionsHelper
       # 一時セッションが存在する場合
       @current_user ||= User.find_by(id: session[:user_id])
     elsif (user_id = cookies.signed[:user_id])
+    debugger
       # 一時セッションが無かった場合
       if user && user.authenticate?(cookies[:remember_token])
         log_in(user)
