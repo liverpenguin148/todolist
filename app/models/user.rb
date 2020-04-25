@@ -38,6 +38,6 @@ class User < ApplicationRecord
   # 渡されたremember_tokenと、DB内のremember_digestと一致したら、trueを返す
   def authenticate?(remember_token)
     return false if remember_digest.nil?
-    Bcrypt::Password.new(remember_digest).is_password?(remember_token)
+    BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
 end
