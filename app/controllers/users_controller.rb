@@ -24,6 +24,15 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
   
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      # 更新成功時
+    else
+      render 'edit'
+    end
+  end
+  
   private
     # Strong Parameter permitで指定した属性以外、許可しない
     def user_params
