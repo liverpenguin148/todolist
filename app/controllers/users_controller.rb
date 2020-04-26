@@ -20,6 +20,10 @@ class UsersController < ApplicationController
     end
   end
   
+  def edit
+    @user = User.find(params[:id])
+  end
+  
   private
     # Strong Parameter permitで指定した属性以外、許可しない
     def user_params
