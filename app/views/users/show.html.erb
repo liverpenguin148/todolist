@@ -1,7 +1,4 @@
 <% provide(:title, @user.name) %>
-<% flash.each do |message_type, message| %>
-  <div class="alert alert-<%= message_type %>"><%= message %></div>
-<% end %>
 <h3>
   <%= gravatar_for(@user) %>
   おかえりなさい <%= @user.name%> さん

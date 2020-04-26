@@ -28,6 +28,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       # 更新成功時
+      flash[:success] = "編集しました。"
+      redirect_to @user
     else
       render 'edit'
     end
