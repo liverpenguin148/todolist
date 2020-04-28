@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       # remember(user)：ハッシュ化した記憶トークンをDBに保存
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
       #ユーザーログイン後にユーザー情報へリダイレクト
-      redirect_to user
+      redirect_back_or user
     else
       #エラーメッセージ表示
       flash.now[:danger] = "メールアドレス、またはパスワードに誤りがあります。"

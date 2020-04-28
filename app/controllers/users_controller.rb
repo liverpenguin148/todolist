@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :logged_in_user, only: [:edit, :update]
+  before_action :correct_uesr,   only: [:edit, :update]
+  
   def show
     @user = User.find(params[:id])
   end
@@ -39,5 +42,21 @@ class UsersController < ApplicationController
     # Strong Parameter permitで指定した属性以外、許可しない
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
+    
+    def logged_in_user
+      # ログインしていない場合
+      unless logged_in?
+        store_location
+        flash[:danger] = "ログインしてください。"
+        redirect_to login_url
+      end
+    end
+    
+    def correct_uesr
+      # ログインユーザーの取得
+      @user = User.find(params[:id])
+      # ログインユーザーとcurrent_userが異なる場合、rootへ遷移
+      redirect_to(root_url) unless correct_user?(@user)
     end
 end
