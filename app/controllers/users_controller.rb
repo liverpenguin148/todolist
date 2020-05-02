@@ -68,7 +68,7 @@ class UsersController < ApplicationController
       # ログインユーザーの取得
       @user = User.find(params[:id])
       # ログインユーザーとcurrent_userが異なる場合、rootへ遷移
-      redirect_to(root_url) unless correct_user?(@user)
+      redirect_to(root_url) unless current_user?(@user)
     end
     
     # ユーザー削除を実行するユーザーに管理者権限があるか
