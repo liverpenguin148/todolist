@@ -1,0 +1,4 @@
+<h1>todoList</h1>
+<p>ようこそ <%= @user.name %>さん</p>
+<p>有効化</p>
+<%= link_to "アカウントの有効化", edit_account_activation_url(@user.activation_token, email: @user.email) %>

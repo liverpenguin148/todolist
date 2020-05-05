@@ -40,9 +40,12 @@ class User < ApplicationRecord
   end
   
   # 渡されたremember_tokenと、DB内のremember_digestと一致したら、trueを返す
-  def authenticate?(remember_token)
-    return false if remember_digest.nil?
-    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  # 引数は属性と、token
+  # 渡された属性をもとに、DBからdigestを取得し、tokenと一致したら、true
+  def authenticate?(attribute,token)
+    digest = self.send("#{attribute}_digest")
+    return false if digest.nil?
+    BCrypt::Password.new(digest).is_password?(token)
   end
   
   private
