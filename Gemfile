@@ -9,6 +9,7 @@ gem 'bcrypt', '3.1.13'
 gem 'faker', '1.7.3'
 gem 'will_paginate', '3.1.7'
 gem 'bootstrap-will_paginate', '1.0.0'
+gem 'rails-i18n', '~> 5.1'
 # Bootstrapとjqueryの追加
 gem 'bootstrap-sass'
 gem 'jquery-rails'
