@@ -42,7 +42,7 @@ class User < ApplicationRecord
   # 渡されたremember_tokenと、DB内のremember_digestと一致したら、trueを返す
   # 引数は属性と、token
   # 渡された属性をもとに、DBからdigestを取得し、tokenと一致したら、true
-  def authenticate?(attribute,token)
+  def authenticate?(attribute, token)
     digest = self.send("#{attribute}_digest")
     return false if digest.nil?
     BCrypt::Password.new(digest).is_password?(token)
@@ -67,6 +67,11 @@ class User < ApplicationRecord
   # パスワード再設定用メールを送信する
   def send_password_reset_email
     UserMailer.password_reset(self).deliver_now
+  end
+  
+  # パスワード再設定の有効期限が切れている場合、trueを返す
+  def password_reset_expired?
+    reset_sent_at < 2.hours.ago
   end
   
   private
