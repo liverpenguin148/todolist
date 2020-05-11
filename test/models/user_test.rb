@@ -73,4 +73,13 @@ class UserTest < ActiveSupport::TestCase
   test "authenticate? should return false when remember_digest is nil" do
     assert_not @user.authenticate?(:remember, '')
   end
+  
+  # ユーザーが削除されたら、紐づいたマイクロポストも削除されるかテスト
+  test "associated microposts should be destroyed" do
+      @user.save
+      @user.microposts.create!(content: "削除するよ")
+      assert_difference 'Micropost.count', -1 do
+        @user.destroy
+      end
+  end
 end

@@ -1,9 +1,26 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+orange:
+  content: "オレンジを食べたよ"
+  created_at: <%= 10.minutes.ago %>
+  user: taka
 
-one:
-  content: MyText
-  user: one
+tau_manifesto:
+  content: "ホームページをチェックしたよ"
+  created_at: <%= 3.years.ago %>
+  user: taka
 
-two:
-  content: MyText
-  user: two
+cat_video:
+  content: "うちの猫のビデオを撮ったよ"
+  created_at: <%= 2.hours.ago %>
+  user: taka
+
+most_recent:
+  content: "最新の投稿だよ"
+  created_at: <%= Time.zone.now %>
+  user: taka
+
+<% 30.times do |n| %>
+micropost_<%= n %>:
+  content: <%= Faker::Lorem.sentence(5) %>
+  created_at: <%= 42.days.ago %>
+  user: taka
+<% end %>

@@ -1,13 +1,25 @@
 <% provide(:title, "Home") %>
-<h1>ようこそ！TodoListへ</h1>
-<p>あなたが管理したいタスクを分かりやすくまとめましょう</p>
-
-<div class="login">
-  <%= link_to "ログイン", login_path, class: "btn btn-primary" %>
-</div>
-<div class="createuser">
-  <%= link_to "新規会員登録はこちら", signup_path, class: "btn btn-primary" %>  
-</div>
-
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+  </div>
+<% else %>
+  <h1>ようこそ！TodoListへ</h1>
+  <p>あなたが管理したいタスクを分かりやすくまとめましょう</p>
+  
+  <div class="login">
+    <%= link_to "ログイン", login_path, class: "btn btn-primary" %>
+  </div>
+  <div class="createuser">
+    <%= link_to "新規会員登録はこちら", signup_path, class: "btn btn-primary" %>  
+  </div>
+<% end %>
 
 
