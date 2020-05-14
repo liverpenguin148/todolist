@@ -63,7 +63,7 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
     
-    # application_controllerへ移行済み
+    # 下記2つのメソッドは、application_controllerへ移行済み
     # def logged_in_user
     #   # ログインしていない場合
     #   unless logged_in?

@@ -24,3 +24,23 @@ micropost_<%= n %>:
   created_at: <%= 42.days.ago %>
   user: taka
 <% end %>
+
+ants:
+  content: "アリは働き者です"
+  created_at: <%= 2.years.ago %>
+  user: archer
+
+zone:
+  content: "危険地帯です！！"
+  created_at: <%= 3.years.ago %>
+  user: archer
+  
+tone:
+  content: "すいません。言葉が見つからない"
+  created_at: <%= 10.minutes.ago %>
+  user: lana
+
+van:
+  content: "今日バンを買いました"
+  created_at: <%= 4.hours.ago >
+  user: lana

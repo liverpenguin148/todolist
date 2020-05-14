@@ -19,4 +19,6 @@ class MicropostsControllerTest < ActionDispatch::IntegrationTest
     end
     assert_redirected_to login_url
   end
+  
+  test 
 end
