@@ -25,7 +25,7 @@ micropost_<%= n %>:
   user: taka
 <% end %>
 
-ants:
+ant:
   content: "アリは働き者です"
   created_at: <%= 2.years.ago %>
   user: archer
@@ -42,5 +42,5 @@ tone:
 
 van:
   content: "今日バンを買いました"
-  created_at: <%= 4.hours.ago >
+  created_at: <%= 4.hours.ago %>
   user: lana
