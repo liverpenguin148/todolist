@@ -4,4 +4,17 @@
     <%= f.text_area :content, placeholder: "今日は何がありましたか?" %>
   </div>
   <%= f.submit "投稿", class: "btn btn-primary" %>
+  <span class="image">
+    <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+  </span>
 <% end %>
+
+<script type="text/javascript">
+  $("#micropost_image").on("change", function(){
+    let size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert("ファイルの最大容量を超えています。5MB以下のファイルを選択してください。")
+      $("#micropost_image").val("")
+    }
+  })
+</script>
