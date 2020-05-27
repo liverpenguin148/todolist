@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-
+  # マイクロポストのリレーション
   has_many :microposts, dependent: :destroy
   # Default: class_name: "Micropost"
   # Default: foreign_key: "user_id"

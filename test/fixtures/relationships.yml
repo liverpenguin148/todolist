@@ -1,0 +1,12 @@
+one:
+    follower: taka
+    followed: lana
+two:
+    follower: taka
+    followed: malory
+three:
+    follower: lana
+    followed: taka
+one:
+    follower: archer
+    followed: taka
