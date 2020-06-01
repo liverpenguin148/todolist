@@ -94,4 +94,25 @@ class UserTest < ActiveSupport::TestCase
     taka.unfollow(archer)
     assert_not taka.following?(archer)
   end
+  
+  test "feed should have the right posts" do
+    taka = users(:taka)
+    archer = users(:archer)
+    lana = users(:lana)
+    
+    # フォローしているユーザーの投稿を確認
+    lana.microposts.each do |post_following|
+      assert taka.feed.include?(post_following)
+    end
+    
+    # 自分自身の投稿を確認
+    taka.microposts.each do |post_self|
+      assert taka.feed.include?(post_self)
+    end
+    
+    # フォローしていないユーザーの投稿を確認
+    archer.microposts.each do |post_unfollowed|
+      assert_not taka.feed.include?(post_unfollowed)
+    end
+  end
 end
