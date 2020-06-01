@@ -1,0 +1,11 @@
+<!-- 自身のユーザーページを表示した場合、フォローフォーム画面は表示しない -->
+<% unless current_user?(@user) %>
+  <div id="follow_form">
+    <!-- 開いたページのユーザーをフォローしている場合 -->
+    <% if current_user.following?(@user) %>
+      <%= render 'unfollow' %>
+    <% else %>
+      <%= render 'follow' %>
+    <% end %>
+  </div>
+<% end %>
